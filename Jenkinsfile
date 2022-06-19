@@ -9,7 +9,7 @@ pipeline {
 				sh 'knife ssl check' 
 				sh 'knife node list' 
 				sh 'knife cookbook list' 
-				sh 'knife node show node-1' 
+				sh 'knife node show node1' 
 				sh 'knife role list'
 			}
 		}
@@ -18,7 +18,7 @@ pipeline {
 		steps { 
 			dir('chef-repo') { 
 				sh 'knife cookbook upload apache2_cookbook' 
-				sh 'knife node run_list set node-1 "recipe[apache2_cookbook::apache2_recipe]"'
+				sh 'knife node run_list set node1 "recipe[apache2_cookbook::apache2_recipe]"'
 			}
 		}
 	}
