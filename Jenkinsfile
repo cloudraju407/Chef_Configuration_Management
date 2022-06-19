@@ -1,5 +1,7 @@
 pipeline { 
-	agent any 
+	agent { 
+		label 'docker-slave1'
+	}
 	stages { 
         stage('Check Chef connection') { 
 		steps { 
